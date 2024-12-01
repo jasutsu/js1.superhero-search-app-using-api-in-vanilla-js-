@@ -45,6 +45,7 @@ const fetchAllSuperHero = async (searchText) => {
 
 const showSearchList = heroes => {
     searchList.innerHTML = "";
+    allData = heroes;
     heroes.forEach(hero => {
         const heroElement = document.createElement('div');
         heroElement.classList.add('search-list-item');
@@ -64,3 +65,22 @@ searchForm.search.addEventListener('keyup', () => {
         searchList.innerHTML = "";
     }
 });
+
+searchForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+});
+
+
+
+// Load Stats for the selected super hero
+searchList.addEventListener('click', (event) => {
+    const searchId = event.target.dataset.id;
+    const singleHero = allData.filter(dataItem => {
+        return dataItem.id === searchId;
+    })[0];
+    showSuperheroDetails(singleHero);
+});
+
+const showSuperheroDetails = (heroData) => {
+    
+};
