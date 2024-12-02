@@ -22,4 +22,4 @@ const updateActiveTabBody = (activeTab) => {
     allTabBodies[activeTab-1].classList.add('show-tab');
 };
 
-export { updateActiveTabMarkup };
+export { allTabHeads, updateActiveTabMarkup };
