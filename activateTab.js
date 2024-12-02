@@ -1,9 +1,12 @@
-const updateActiveTabMarkup = (allTabHeads, allTabBodies, activeTab) => {
-    updateActiveTabHead(allTabHeads, activeTab);
-    updateActiveTabBody(allTabBodies, activeTab);
+const allTabHeads = document.querySelectorAll('.tab-head-single');
+const allTabBodies = document.querySelectorAll('.tab-body-single');
+
+const updateActiveTabMarkup = (activeTab) => {
+    updateActiveTabHead(activeTab);
+    updateActiveTabBody(activeTab);
 };
 
-const updateActiveTabHead = (allTabHeads, activeTab) => {
+const updateActiveTabHead = (activeTab) => {
     // hide all tab heads first
     allTabHeads.forEach(tabHead => tabHead.classList.remove('active-tab'));
 
@@ -11,7 +14,7 @@ const updateActiveTabHead = (allTabHeads, activeTab) => {
     allTabHeads[activeTab-1].classList.add('active-tab');
 };
 
-const updateActiveTabBody = (allTabBodies, activeTab) => {
+const updateActiveTabBody = (activeTab) => {
     // hide all tab bodies first
     allTabBodies.forEach(tabBody => tabBody.classList.remove('show-tab'));
 
